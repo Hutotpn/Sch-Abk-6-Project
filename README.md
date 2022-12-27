@@ -1,1 +1,1 @@
-# Sch-Abk-6-Project
+# Python Project (Aksep 19 6)
