@@ -19,8 +19,8 @@ def divide(x, y):
     return x / y
 
 
-# Welcome Mesage
-print("Welcome to the calculator!")
+# Welcome Message
+print("Welcome to the Calculator!")
 time.sleep(1)
 while True:
     print("Select operation.")
@@ -37,7 +37,7 @@ while True:
     num1 = int(input("Enter first number: "))
     num2 = int(input("Enter second number: "))
 
-    # Caculate
+    # Calculate
     if choice == '1':
         print(num1, "+", num2, "=", add(num1, num2))
 
