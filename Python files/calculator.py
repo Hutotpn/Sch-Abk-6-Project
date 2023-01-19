@@ -54,7 +54,7 @@ while True:
 
     # Try again?
     time.sleep(1)
-    print("Do you want to try again?(y/n): ")
+    print("Do you want to try again?: ")
     # Ask for input
     tryagain = input("Enter y/n: ")
     # If yes, do it again
