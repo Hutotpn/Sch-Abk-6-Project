@@ -87,4 +87,55 @@ If the user enters an invalid choice, the program will print "Invalid input".
 
 Finally, after the operation is done, the program asks the user if they want to try again by entering 'y' or 'n'. If the user enters 'y', the program reloads and the loop starts again. If the user enters 'n', the program exits and displays a goodbye message.
 
-The time.sleep() function is used to delay the execution of certain parts of the code, making the program more user-friendly and readable.
+The `time.sleep()` function is used to delay the execution of certain parts of the code, making the program more user-friendly and readable.
+
+---
+### Number Generator
+#### Code
+``` python
+import random
+from time import sleep
+
+def grn():
+  # Prompt the user to enter the lower and upper bounds of the range
+  low = int(input("Enter the lower bound of the range: "))
+  high = int(input("Enter the upper bound of the range: "))
+
+  # Generate a random integer between low and high (inclusive)
+  return random.randint(low, high)
+
+# Welcome & Generate a random number within the user-specified range
+print("Welcome to the Number Generator!")
+
+sleep(1)
+
+while True:
+  print(grn())
+  
+  # Try again?
+  sleep(1)
+  print("Do you want to try again?: ")
+  # Ask for input
+  tryagain = input("Enter y/n: ")
+  # If yes, do it again
+  if tryagain == 'y':
+    print("Reloading!")
+    sleep(0.5)
+    print("Reloaded!")
+ 
+# If no, exit
+else:
+  print("Goodbye!")
+  sleep(3)
+  break
+```
+#### Explain this code
+This is a Python program that generates random numbers within a range specified by the user.
+
+It starts by importing the random module and sleep function from the time module.
+
+The grn() function is defined which prompts the user to enter the lower and upper bounds of the range. It then uses the random.randint() function to generate a random integer between the specified bounds and returns the result.
+
+The program then displays a welcome message and enters an infinite loop using while True. Within the loop, it calls the grn() function and prints the returned random number.
+
+After that, the program asks the user if they want to try again by entering 'y' or 'n' using input() function. If the user enters 'y', the program reloads and the loop starts again. If the user enters 'n', the program exits and displays a goodbye message and break the infinite loop. The sleep() function is used to delay the execution of certain parts of the code, making the program more user-friendly and readable.
