@@ -14,4 +14,22 @@ print("Welcome to the Number Generator!")
 
 sleep(1)
 
-print(grn())
+while True:
+  print(grn())
+  
+  # Try again?
+  sleep(1)
+  print("Do you want to try again?: ")
+  # Ask for input
+  tryagain = input("Enter y/n: ")
+  # If yes, do it again
+  if tryagain == 'y':
+    print("Reloading!")
+    sleep(0.5)
+    print("Reloaded!")
+ 
+# If no, exit
+else:
+  print("Goodbye!")
+  sleep(3)
+  break
