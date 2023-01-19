@@ -1,6 +1,7 @@
 # Python Project (Aksep 19 6)
 ## Explain the code
 ### Calculator
+#### Code
 ``` python
 # Import & Settings
 import time
@@ -73,3 +74,17 @@ while True:
         time.sleep(3)
         break
 ```
+#### Explain this code
+It starts by importing the time module, which is used later in the program to delay the execution of certain parts of the code.
+
+It then defines four functions: add, subtract, multiply, and divide, which take in two arguments (x and y) and perform the corresponding mathematical operation on them.
+
+After that, the program displays a welcome message and then enters a while loop that continues until the user decides to exit the program. The loop starts by displaying a menu of operations (add, subtract, multiply, and divide), and then prompts the user to select one of the options by entering a number (1, 2, 3, or 4).
+
+Once the user makes a selection, the program prompts the user to enter two numbers. It then uses an if-elif statement to check the user's choice and perform the corresponding operation using the two numbers entered by the user. The result is then printed to the screen.
+
+If the user enters an invalid choice, the program will print "Invalid input".
+
+Finally, after the operation is done, the program asks the user if they want to try again by entering 'y' or 'n'. If the user enters 'y', the program reloads and the loop starts again. If the user enters 'n', the program exits and displays a goodbye message.
+
+The time.sleep() function is used to delay the execution of certain parts of the code, making the program more user-friendly and readable.
