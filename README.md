@@ -138,7 +138,7 @@ The `grn()` function is defined which prompts the user to enter the lower and up
 
 The program then displays a welcome message and enters an infinite loop using while True. Within the loop, it calls the `grn()` function and prints the returned random number.
 
-After that, the program asks the user if they want to try again by entering 'y' or 'n' using input() function. If the user enters 'y', the program reloads and the loop starts again. If the user enters 'n', the program exits and displays a goodbye message and break the infinite loop. The `sleep()` function is used to delay the execution of certain parts of the code, making the program more user-friendly and readable.
+After that, the program asks the user if they want to try again by entering 'y' or 'n' using `input()` function. If the user enters 'y', the program reloads and the loop starts again. If the user enters 'n', the program exits and displays a goodbye message and break the infinite loop. The `sleep()` function is used to delay the execution of certain parts of the code, making the program more user-friendly and readable.
 
 ---
 ### Temperature Calculator
