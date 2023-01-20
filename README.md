@@ -75,17 +75,17 @@ while True:
         break
 ```
 #### Explain this code
-It starts by importing the time module, which is used later in the program to delay the execution of certain parts of the code.
+It starts by importing the *time* module, which is used later in the program to delay the execution of certain parts of the code.
 
 It then defines four functions: add, subtract, multiply, and divide, which take in two arguments (x and y) and perform the corresponding mathematical operation on them.
 
-After that, the program displays a welcome message and then enters a while loop that continues until the user decides to exit the program. The loop starts by displaying a menu of operations (add, subtract, multiply, and divide), and then prompts the user to select one of the options by entering a number (1, 2, 3, or 4).
+After that, the program displays a welcome message and then enters a while loop that continues until the user decides to exit the program. The loop starts by displaying a menu of operations (add, subtract, multiply, and divide), and then prompts the user to select one of the options by entering a number (**1**, **2**, **3**, or **4**).
 
 Once the user makes a selection, the program prompts the user to enter two numbers. It then uses an `if-elif` statement to check the user's choice and perform the corresponding operation using the two numbers entered by the user. The result is then printed to the screen.
 
-If the user enters an invalid choice, the program will print "Invalid input".
+If the user enters an invalid choice, the program will print "**Invalid input**".
 
-Finally, after the operation is done, the program asks the user if they want to try again by entering 'y' or 'n'. If the user enters 'y', the program reloads and the loop starts again. If the user enters 'n', the program exits and displays a goodbye message.
+Finally, after the operation is done, the program asks the user if they want to try again by entering '**y**' or '**n**'. If the user enters '**y**', the program reloads and the loop starts again. If the user enters '**n**', the program exits and displays a goodbye message.
 
 The `time.sleep()` function is used to delay the execution of certain parts of the code, making the program more user-friendly and readable.
 
@@ -132,13 +132,13 @@ else:
 #### Explain this code
 This is a Python program that generates random numbers within a range specified by the user.
 
-It starts by importing the random module and sleep function from the time module.
+It starts by importing the *random module* and *sleep* (from *time*) function from the time module.
 
 The `grn()` function is defined which prompts the user to enter the lower and upper bounds of the range. It then uses the `random.randint()` function to generate a random integer between the specified bounds and returns the result.
 
-The program then displays a welcome message and enters an infinite loop using while True. Within the loop, it calls the `grn()` function and prints the returned random number.
+The program then displays a welcome message and enters an infinite loop using `while True`. Within the loop, it calls the `grn()` function and prints the returned random number.
 
-After that, the program asks the user if they want to try again by entering 'y' or 'n' using `input()` function. If the user enters 'y', the program reloads and the loop starts again. If the user enters 'n', the program exits and displays a goodbye message and break the infinite loop. The `sleep()` function is used to delay the execution of certain parts of the code, making the program more user-friendly and readable.
+After that, the program asks the user if they want to try again by entering '**y**' or '**n**' using `input()` function. If the user enters '**y**', the program reloads and the loop starts again. If the user enters '**n**', the program exits and displays a goodbye message and break the infinite loop. The `sleep()` function is used to delay the execution of certain parts of the code, making the program more user-friendly and readable.
 
 ---
 ### Temperature Calculator
@@ -173,10 +173,10 @@ else:
 #### Explain this code
 This is a basic temperature calculator program written in Python. It allows users to convert temperature between Celsius and Fahrenheit.
 
-The program starts by importing the time module, which is used later in the program to delay the execution of certain parts of the code.
+The program starts by importing the *time* module, which is used later in the program to delay the execution of certain parts of the code.
 
-It then displays a welcome message and prompts the user to select an option from a menu (1. Celsius to Fahrenheit or 2. Fahrenheit to Celsius) using `input()` function.
+It then displays a welcome message and prompts the user to select an option from a menu (**1. Celsius to Fahrenheit** or **2. Fahrenheit to Celsius**) using `input()` function.
 
-Once the user makes a selection, the program prompts the user to enter the temperature in the chosen unit using the `input()` function, converts the user input into integer and uses an `if-elif` statement to check the user's choice. If the user chooses option 1, the program converts the entered temperature in Fahrenheit to Celsius using the formula (F-32)*(5/9) and prints the result. If the user chooses option 2, the program converts the entered temperature in Celsius to Fahrenheit using the formula (C*1.8)+32 and prints the result. If the user enters an invalid choice, the program will print "Invalid option".
+Once the user makes a selection, the program prompts the user to enter the temperature in the chosen unit using the `input()` function, converts the user input into integer and uses an `if-elif` statement to check the user's choice. If the user chooses option **1**, the program converts the entered temperature in Fahrenheit to Celsius using the formula *(F-32)*(5/9)* and prints the result. If the user chooses option **2**, the program converts the entered temperature in Celsius to Fahrenheit using the formula *(C*1.8)+32* and prints the result. If the user enters an invalid choice, the program will print "**Invalid option**".
 
 The `time.sleep()` function is used to delay the execution of certain parts of the code, making the program more user-friendly and readable.
