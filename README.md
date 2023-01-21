@@ -171,12 +171,12 @@ else:
     print("Invalid option")
 ```
 #### Explain this code
-This is a basic temperature calculator program written in Python. It allows users to convert temperature between Celsius and Fahrenheit.
+This is a Python program that converts temperature between Celsius and Fahrenheit.
 
-The program starts by importing the *time* module, which is used later in the program to delay the execution of certain parts of the code.
+It starts by importing the *time* module and displaying a welcome message to the user. Then it enters an infinite loop using `while True` and prompts the user to select an option for the conversion using `input()` function. The program presents two options: **1** for converting **Celsius to Fahrenheit** and **2** for **converting Fahrenheit to Celsius**.
 
-It then displays a welcome message and prompts the user to select an option from a menu (**1. Celsius to Fahrenheit** or **2. Fahrenheit to Celsius**) using `input()` function.
+Based on the user's choice, it prompts the user to enter a temperature value in the selected unit and uses the corresponding formula for the conversion. The result is then displayed to the user using **print()** statement.
 
-Once the user makes a selection, the program prompts the user to enter the temperature in the chosen unit using the `input()` function, converts the user input into integer and uses an `if-elif` statement to check the user's choice. If the user chooses option **1**, the program converts the entered temperature in Fahrenheit to Celsius using the formula *(F-32)*(5/9)* and prints the result. If the user chooses option **2**, the program converts the entered temperature in Celsius to Fahrenheit using the formula *(C*1.8)+32* and prints the result. If the user enters an invalid choice, the program will print "**Invalid option**".
+If the user enters an invalid choice, the program will print "**Invalid option**"
 
-The `time.sleep()` function is used to delay the execution of certain parts of the code, making the program more user-friendly and readable.
+Finally, after the operation is done, the program asks the user if they want to try again by entering '**y**' or '**n**' using `input()` function. If the user enters '**y**', the program reloads and the loop starts again. If the user enters '**n**', the program exits and displays a goodbye message. The `time.sleep()` function is used to delay the execution of certain parts of the code, making the program more user-friendly and readable.
