@@ -164,12 +164,12 @@ while True:
         askfah = int((input("Enter temperature in Fahrenheit: ")))
         fah = (askfah * 1.8) + 32
         print("The temperature in Fahrenheit is: " + str(fah))
-        elif wtw == "2":
-            askcel = int((input("Enter temperature in Celsius: ")))
-            cel = (askcel - 32) * 5 / 9
-            print("The temperature in Celsius is: " + str(cel))
-            else:
-                print("Invalid option")
+    elif wtw == "2":
+        askcel = int((input("Enter temperature in Celsius: ")))
+        cel = (askcel - 32) * 5 / 9
+        print("The temperature in Celsius is: " + str(cel))
+    else:
+        print("Invalid option")
     # Try again?
     time.sleep(1)
     print("Do you want to try again?: ")
