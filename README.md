@@ -197,3 +197,65 @@ Based on the user's choice, it prompts the user to enter a temperature value in 
 If the user enters an invalid choice, the program will print "**Invalid option**"
 
 Finally, after the operation is done, the program asks the user if they want to try again by entering '**y**' or '**n**' using `input()` function. If the user enters '**y**', the program reloads and the loop starts again. If the user enters '**n**', the program exits and displays a goodbye message. The `time.sleep()` function is used to delay the execution of certain parts of the code, making the program more user-friendly and readable.
+
+---
+### Password Generator
+#### Code
+``` python
+import random
+import string
+import time
+
+def generate_password(length, use_uppercase=True, use_numbers=True, use_special_characters=True):
+    # Create a list of characters to use in the password
+    characters = string.ascii_lowercase
+    
+    if use_uppercase:
+        characters += string.ascii_uppercase
+    if use_numbers:
+        characters += string.digits
+    if use_special_characters:
+        characters += string.punctuation
+    
+    # Use the random module to shuffle the characters
+    password = ''.join(random.sample(characters, length))
+    return password
+
+# Welcome message
+print("Welcome to the Random Password Generator!")
+
+time.sleep(1)
+
+while True:
+    # Prompt the user for the password length
+    length = int(input("How many characters would you like your password to have? "))
+
+    # Prompt the user for the type of characters to use
+    use_uppercase = input("Use uppercase letters? (y/n) ") == 'y'
+    use_numbers = input("Use numbers? (y/n) ") == 'y'
+    use_special_characters = input("Use special characters? (y/n) ") == 'y'
+
+    # Generate the password
+    password = generate_password(length, use_uppercase, use_numbers, use_special_characters)
+    time.sleep(2)
+    print("Your generated password is: " + password)
+
+    try_again = input("Do you want to generate another password? (y/n) ")
+    if try_again.lower() != 'y':
+        print("Thank you for using the Random Password Generator. Goodbye!")
+        break
+```
+#### Explain this code
+This is a Python program that generates random passwords by using the `random` and `string` modules. The program starts by importing the `random` and `string` modules and the `time` module that will be used to add a delay to the program.
+
+It defines a function `generate_password` that takes in four parameters:
+
+`length`: the length of the password to generate
+`use_uppercase`: a Boolean indicating whether to include uppercase letters in the password (defaults to **True**)
+`use_numbers`: a Boolean indicating whether to include numbers in the password (defaults to **True**)
+`use_special_characters`: a Boolean indicating whether to include special characters in the password (defaults to **True**)
+It then creates a list of characters to use in the password by concatenating different sets of characters based on the parameters passed in. The `string` module is used to get the set of lowercase letters, uppercase letters, digits and special characters.
+
+Then the function uses the ``random.sample()`` function to shuffle the characters and join them to form a password. The function then returns the generated password.
+
+The program then displays a welcome message and enters an infinite loop using `while True` where it prompts the user for the password length and the type of characters to use. It then generates the password and displays it to the user after a 2 second delay by using the `time.sleep(2)`. Finally, the program asks the user if they want to generate another password by using `input()` function. If the user enters '**y**', the program reloads and the loop starts again. If the user enters '**n**', the program exits and displays a goodbye message.
