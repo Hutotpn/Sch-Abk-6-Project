@@ -1,34 +1,34 @@
-import random
-import string
+# Import
+import time
 
-def generate_password(length, use_uppercase=True, use_numbers=True, use_special_characters=True):
-    characters = string.ascii_lowercase
-    if use_uppercase:
-        characters += string.ascii_uppercase
-    if use_numbers:
-        characters += string.digits
-    if use_special_characters:
-        characters += string.punctuation
-    password = ''.join(random.sample(characters, length))
-    return password
-
-print("Welcome to the Random Password Generator!")
+# Welcome
+print("Welcome to the Temperature Calculator!")
+time.sleep(1)
 
 while True:
-    length = int(input("Enter the desired length of your password (minimum 6 characters): "))
-    if length < 6:
-        print("For your safety, password length must be at least 6 characters. Please try again.")
-        continue
+    # Ask
+    print("\nPlease choose an option:")
+    print("1. Convert from Celsius to Fahrenheit")
+    print("2. Convert from Fahrenheit to Celsius")
 
-    print("Choose the types of characters to include in your password:")
-    use_uppercase = input("Include uppercase letters? (y/n) ").lower() == 'y'
-    use_numbers = input("Include numbers? (y/n) ").lower() == 'y'
-    use_special_characters = input("Include special characters? (y/n) ").lower() == 'y'
+    # Get user input
+    user_choice = input("Enter your choice (1 or 2): ")
 
-    password = generate_password(length, use_uppercase, use_numbers, use_special_characters)
-    print(f"Your generated password is: {password}")
+    # Calculate and print result
+    if user_choice == "1":
+        celsius = float(input("Enter temperature in Celsius: "))
+        fahrenheit = (celsius * 1.8) + 32
+        print("The temperature in Fahrenheit is: {:.2f}°F".format(fahrenheit))
+    elif user_choice == "2":
+        fahrenheit = float(input("Enter temperature in Fahrenheit: "))
+        celsius = (fahrenheit - 32) * 5 / 9
+        print("The temperature in Celsius is: {:.2f}°C".format(celsius))
+    else:
+        print("Invalid option")
 
-    try_again = input("Do you want to generate another password? (y/n) ").lower()
+    # Ask user if they want to try again
+    try_again = input("\nWould you like to try again? (y/n) ").lower()
     if try_again != 'y':
-        print("Thank you for using the Random Password Generator. Goodbye!")
+        print("\nThank you for using the Temperature Calculator. Goodbye!")
+        time.sleep(3)
         break
