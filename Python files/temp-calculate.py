@@ -1,42 +1,34 @@
-# Import
-import time
+import random
+import string
 
-# Welcome
-print("Welcome to the Temperature calculator.")
+def generate_password(length, use_uppercase=True, use_numbers=True, use_special_characters=True):
+    characters = string.ascii_lowercase
+    if use_uppercase:
+        characters += string.ascii_uppercase
+    if use_numbers:
+        characters += string.digits
+    if use_special_characters:
+        characters += string.punctuation
+    password = ''.join(random.sample(characters, length))
+    return password
+
+print("Welcome to the Random Password Generator!")
 
 while True:
-    # Ask
-    time.sleep(1)
-    print("Choose an option:")
-    print("1. Celsius to Fahrenheit")
-    print("2. Fahrenheit to Celsius")
-    
-    time.sleep(1)
-    wtw = input("Enter choice(1 or 2): ")
-    # Calculate
-    if wtw == "1":
-        askfah = int((input("Enter temperature in Fahrenheit: ")))
-        fah = (askfah * 1.8) + 32
-        print("The temperature in Fahrenheit is: " + str(fah))
-    elif wtw == "2":
-        askcel = int((input("Enter temperature in Celsius: ")))
-        cel = (askcel - 32) * 5 / 9
-        print("The temperature in Celsius is: " + str(cel))
-    else:
-        print("Invalid option")
-    # Try again?
-    time.sleep(1)
-    print("Do you want to try again?: ")
-    # Ask for input
-    tryagain = input("Enter y/n: ")
-    # If yes, do it again
-    if tryagain == 'y':
-        print("Reloading!")
-        time.sleep(0.5)
-        print("Reloaded!")
+    length = int(input("Enter the desired length of your password (minimum 6 characters): "))
+    if length < 6:
+        print("For your safety, password length must be at least 6 characters. Please try again.")
+        continue
 
-    # If no, exit
-    else:
-        print("Goodbye!")
-        time.sleep(3)
+    print("Choose the types of characters to include in your password:")
+    use_uppercase = input("Include uppercase letters? (y/n) ").lower() == 'y'
+    use_numbers = input("Include numbers? (y/n) ").lower() == 'y'
+    use_special_characters = input("Include special characters? (y/n) ").lower() == 'y'
+
+    password = generate_password(length, use_uppercase, use_numbers, use_special_characters)
+    print(f"Your generated password is: {password}")
+
+    try_again = input("Do you want to generate another password? (y/n) ").lower()
+    if try_again != 'y':
+        print("Thank you for using the Random Password Generator. Goodbye!")
         break
