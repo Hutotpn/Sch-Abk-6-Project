@@ -1,5 +1,7 @@
 # Python Project (Aksep 19 6)
 
+[![CodeQL](https://github.com/Hutotpn/Python-project-Aksep19/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/Hutotpn/Python-project-Aksep19/actions/workflows/github-code-scanning/codeql)
+
 ## Explain the code
 
 ### Calculator
@@ -91,7 +93,7 @@ After defining the functions, the program prints a welcome message, and then ent
 
 If the user's choice is not one of the four options, the program displays an error message and goes back to the beginning of the loop. If the user's choice is valid, the program asks the user to enter two numbers, and then performs the chosen operation. The result of the operation is displayed, and then the program asks the user if they want to perform another calculation. If the user enters '**n**', the program terminates and displays a goodbye message. If the user enters '**y**', the program goes back to the beginning of the loop.
 
-## <!-- End Calculator -->
+<!-- End Calculator -->
 
 ### Number Generator
 
@@ -175,7 +177,7 @@ while True:
 
 #### Explain this code
 
-The code implements a temperature calculator that allows the user to convert temperatures between **Celsius** and **Fahrenheit**. When the program starts, it displays a welcome message and presents two options to the user: **(1) Convert from Celsius to Fahrenheit**, and **(2) Convert from Fahrenheit to Celsius**. The user is prompted to enter their choice (1 or 2). If the user enters 1, the program asks for a temperature in Celsius and then converts it to Fahrenheit using the formula fahrenheit = `(celsius * 1.8) + 32`. The result is displayed with a message. If the user enters 2, the program asks for a temperature in Fahrenheit and then converts it to Celsius using the formula celsius = `(fahrenheit - 32) * 5 / 9`. The result is displayed with a message. If the user enters anything other than 1 or 2, an error message is displayed. After each calculation, the program asks the user if they want to try again. If the user enters '**y**', the program starts again. If the user enters anything other than '**y**', the program displays a goodbye message and exits. The `time.sleep` function is used to add pauses between each message for better readability. <!-- Stop here -->
+The code implements a temperature calculator that allows the user to convert temperatures between **Celsius** and **Fahrenheit**. When the program starts, it displays a welcome message and presents two options to the user: **(1) Convert from Celsius to Fahrenheit**, and **(2) Convert from Fahrenheit to Celsius**. The user is prompted to enter their choice (1 or 2). If the user enters 1, the program asks for a temperature in Celsius and then converts it to Fahrenheit using the formula fahrenheit = `(celsius * 1.8) + 32`. The result is displayed with a message. If the user enters 2, the program asks for a temperature in Fahrenheit and then converts it to Celsius using the formula celsius = `(fahrenheit - 32) * 5 / 9`. The result is displayed with a message. If the user enters anything other than 1 or 2, an error message is displayed. After each calculation, the program asks the user if they want to try again. If the user enters '**y**', the program starts again. If the user enters anything other than '**y**', the program displays a goodbye message and exits. The `time.sleep` function is used to add pauses between each message for better readability.
 
 <!-- End Temperature Calculator -->
 
@@ -191,57 +193,45 @@ import string
 import time
 
 def generate_password(length, use_uppercase=True, use_numbers=True, use_special_characters=True):
-    # Create a list of characters to use in the password
     characters = string.ascii_lowercase
-
     if use_uppercase:
         characters += string.ascii_uppercase
     if use_numbers:
         characters += string.digits
     if use_special_characters:
         characters += string.punctuation
-
-    # Use the random module to shuffle the characters
     password = ''.join(random.sample(characters, length))
     return password
 
-# Welcome message
 print("Welcome to the Random Password Generator!")
-
 time.sleep(1)
 
 while True:
-    # Prompt the user for the password length
-    length = int(input("How many characters would you like your password to have? "))
+    length = int(input("Enter the desired length of your password (minimum 6 characters): "))
+    if length < 6:
+        print("For your safety, password length must be at least 6 characters. Please try again.")
+        continue
 
-    # Prompt the user for the type of characters to use
-    use_uppercase = input("Use uppercase letters? (y/n) ") == 'y'
-    use_numbers = input("Use numbers? (y/n) ") == 'y'
-    use_special_characters = input("Use special characters? (y/n) ") == 'y'
+    print("Choose the types of characters to include in your password:")
+    time.sleep(1)
+    use_uppercase = input("Include uppercase letters? (y/n) ").lower() == 'y'
+    use_numbers = input("Include numbers? (y/n) ").lower() == 'y'
+    use_special_characters = input("Include special characters? (y/n) ").lower() == 'y'
 
-    # Generate the password
     password = generate_password(length, use_uppercase, use_numbers, use_special_characters)
-    time.sleep(2)
-    print("Your generated password is: " + password)
+    print(f"Your generated password is: {password}")
 
-    try_again = input("Do you want to generate another password? (y/n) ")
-    if try_again.lower() != 'y':
+    try_again = input("Do you want to generate another password? (y/n) ").lower()
+    if try_again != 'y':
         print("Thank you for using the Random Password Generator. Goodbye!")
+        time.sleep(3)
         break
 ```
 
 #### Explain this code
 
-This is a Python program that generates random passwords by using the `random` and `string` modules. The program starts by importing the `random` and `string` modules and the `time` module that will be used to add a delay to the program.
+The code generates a random password based on user-specified length and character types (uppercase letters, numbers, special characters). The `generate_password` function takes four arguments: `length`, `use_uppercase`, `use_numbers`, and `use_special_characters`. The user-specified length and character type preferences are passed to the function, and a password is generated using `random.sample`. The program then prints the generated password and asks the user if they want to generate another password. If the user enters anything other than '**y**', the program displays a goodbye message and exits. The `sleep` function from the `time` module is used to add pauses between each message for better readability.
 
-It defines a function `generate_password` that takes in four parameters:
+<!-- End Password Generator -->
 
-`length`: the length of the password to generate
-`use_uppercase`: a Boolean indicating whether to include uppercase letters in the password (defaults to **True**)
-`use_numbers`: a Boolean indicating whether to include numbers in the password (defaults to **True**)
-`use_special_characters`: a Boolean indicating whether to include special characters in the password (defaults to **True**)
-It then creates a list of characters to use in the password by concatenating different sets of characters based on the parameters passed in. The `string` module is used to get the set of lowercase letters, uppercase letters, digits and special characters.
-
-Then the function uses the `random.sample()` function to shuffle the characters and join them to form a password. The function then returns the generated password.
-
-The program then displays a welcome message and enters an infinite loop using `while True` where it prompts the user for the password length and the type of characters to use. It then generates the password and displays it to the user after a 2 second delay by using the `time.sleep(2)`. Finally, the program asks the user if they want to generate another password by using `input()` function. If the user enters '**y**', the program reloads and the loop starts again. If the user enters '**n**', the program exits and displays a goodbye message.
+<!-- Documentation End -->
