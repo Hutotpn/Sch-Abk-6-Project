@@ -130,7 +130,7 @@ sleep(3)
 
 The code generates random numbers within a user-specified range. The user is first asked to enter the lower and upper bounds of the range. Then, a random integer between the specified bounds is generated using the `random.randint` function. The generated number is displayed, and the user is asked if they want to generate another random number. If the user enters '**y**', another random number is generated. If the user enters anything other than '**y**', the program displays a goodbye message and exits. The `sleep` function from the `time` module is used to add pauses between each message for better readability.
 
-## <!-- End Number Generator -->
+<!-- End Number Generator -->
 
 ### Temperature Calculator
 
