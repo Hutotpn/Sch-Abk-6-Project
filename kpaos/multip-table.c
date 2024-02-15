@@ -11,7 +11,7 @@ int main()
     
     // For loop
     for(b=1; b <= 12; b++) {
-        printf("%d x %d = %d\n", a, b, a*b)
+        printf("%d x %d = %d\n", a, b, a*b);
     }
     
     return 0;
